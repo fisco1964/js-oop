@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>constractor function</title>
+</head>
+<body>
+    <script>
+        //ketik huruf kapital di awal kata
+        function SayHalloNama(firstName, lastName) {
+
+        //properti di constructor function
+            this.firstName = firstName;
+            this.lastName = lastName;
+
+        // method di constructor function
+            this.SayHallo = function (name){ 
+            console.info(`hello ${name}, my name is ${this.firstName}`);
+            }
+        }
+        // parameter di constructor function
+             const rachmad = new SayHalloNama("Rachmad", "Muharram");
+             
+        // panggil method di constructor function 
+            rachmad.SayHallo("joko");
+
+         // tanpa parameter di constructor function
+            const budi = new SayHalloNama();
+             budi.firstName = "Budi";
+            budi.lastName = "Nugraha";
+
+            console.log(rachmad);
+            console.log(budi);
+
+    </script>
+</body>
+</html>

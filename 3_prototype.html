@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype</title>
+</head>
+<body>
+    <script>
+        function person(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.SayHallo = function (name){ 
+            console.info(`hello ${name}, my name is ${this.firstName}`);
+            }
+        }
+
+        person.prototype.saySomething = function (){
+            console.log("Good Bye");
+        }
+
+        person.prototype.run = function () {
+            console.log(`${this.firstName} is running`);
+        }
+
+
+        const rachmad = new person("Rachmad", "Muharram");
+        // saat pertama kali di jalankan js akan mengecek prototype di rachmad terlebih dahulu "sampai jumpa", jika tidak maka prototype saySomething "good bye"
+        rachmad.saySomething = function () {
+            console.log("sampai jumpa");
+        }
+        const murdani = new person("Murdani", "Yusuf");
+
+        console.log(rachmad);
+        console.log(murdani);
+
+        rachmad.saySomething();
+        rachmad.run();
+    </script>
+</body>
+</html>
